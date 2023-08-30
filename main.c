@@ -1,33 +1,28 @@
-#include <stdio.h>
-#include <stdlib.h>
+/**
+ * @file main.c
+ * @author Justin Bradshaw
+ * @brief Finds the number of tokens in a cis string that was imputed into the terminal.
+ * @version 0.1
+ * @date 2023-08-30
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
+#include "functions.h"
 
-int getTokens(char *s, char ***args);
-const int SIZE = 10;
+
+
 
 int main()
 {
 
-    char **arrayOfTokens, str[] = "ls -l file";
+    char **arrayOfTokens, str[256] = "ls -l file";
     int numberOfTokens;
+    printf("Please enter the string:");
+    scanf("%s", str);
+
     numberOfTokens = getTokens(str, &arrayOfTokens);
-
-    // scanf("%d", &arrayOfTokens);
-    printf("%d", numberOfTokens);
-
+    printf("%d", numberOfTokens);    
     return 0;
 }
 
-
-int getTokens(char *s, char ***args){
-    printf("In getTokens\n");
-    int num = 1;
-    for (int i = 0; i < SIZE; i++){
-        if((s+i) == " "){
-            printf("%s", s+i);
-            num++;
-        }
-    }
-
-
-    return num;
-}
