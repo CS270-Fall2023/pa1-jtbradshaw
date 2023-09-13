@@ -18,17 +18,43 @@
  * @return the number of tokens in the function
  */
 int getTokens(char *s, char ***args){
-    //
-    //printf("In getTokens\n");
-    int size = 0;
-    int num = 1; //Minimum number of tokens including NULL
-    for (int i = 0; i < 50; i++){
-        size++;
-        if(isspace(s[i])){ //Use isspace #include <ctype.h>
-            strncpy((*args)[num-1], s+i-size, size);
-            num++;
-            size = 0;
+    int numSpace = 0;
+    int sizeOfStr = 0;
+    int token = 0;
+    int numString = 1;
+    char temp;
+    for(int i = 0; i <= sizeof(s);i++){
+        sizeOfStr++;
+        if(!isspace(s[i])){
+            printf("In if !isspace with token num = %d\n", token);
+            temp = s[i];
+            (*args+token)[i] = &temp;
+            printf("Temp: %d\n", temp);
+            printf("args: %s\n", (*args+token)[i]);
+        }else{
+            numSpace++;
+            token++;
+            numString ++;
+            printf("sizeOfStr: %d\n", sizeOfStr);
+            printf("numString: %d\n", numString);
+            
         }
     }
-    return num;
+    printf("numSpace: %d\n", numSpace);
+
+
+    // int size = 0;
+    // int num = 1; //Minimum number of tokens including NULL
+
+
+    // for (int i = 0; i < 50; i++){
+    //     size++;
+    //     if(isspace(s[i])){ //Use isspace #include <ctype.h>
+    //         strncpy((*args)[num-1], s+i-size, size);
+    //         num++;
+    //         size = 0;
+    //     }
+    // }
+    
+    return numString;
 }
