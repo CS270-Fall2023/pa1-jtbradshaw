@@ -1,3 +1,13 @@
+/**
+ * @file functions.h
+ * @author Justin Bradshaw
+ * @brief .h file for PA1
+ * @version 0.1
+ * @date 2023-09-13
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
 #ifndef FUNCTIONS_H
 #define FUNCTIONS_H
 
