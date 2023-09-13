@@ -16,13 +16,32 @@
 int main()
 {
 
-    char **arrayOfTokens, str[256] = "ls -l file";
+    char **arrayOfTokens, str[256] = "ls -l file"; //ls -l file
+
+    arrayOfTokens = (char**)malloc(sizeof(char*)*(100));
+    for(int i = 0; i < 100; i++){
+        arrayOfTokens[i] = (char*)malloc(sizeof(char)*100);  
+    }
+    
     int numberOfTokens;
-    printf("Please enter the string:");
-    scanf("%s", str);
+    // printf("Please enter the string:");
+    // fgets(str, 256, stdin);
 
     numberOfTokens = getTokens(str, &arrayOfTokens);
-    printf("%d", numberOfTokens);    
+    printf("Number of tokens = %d\n", numberOfTokens+1);
+    printf("%s", str);
+    printf("%s\n", *arrayOfTokens);
+
+    for(int i = 0; i<=numberOfTokens; i++){
+        printf("Token %d:", i);
+        printf("%s\n", arrayOfTokens[i]);
+    }
+
+    for(int i = 0; i < 100; i++){
+        free(arrayOfTokens[i]);
+        
+    }
+    free(arrayOfTokens);
     return 0;
 }
 
