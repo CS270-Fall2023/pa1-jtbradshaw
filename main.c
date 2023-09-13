@@ -22,10 +22,9 @@ int main()
     for(int i = 0; i < 10; i++){
         arrayOfTokens[i] = (char*)malloc(sizeof(char)*10);  
     }
-    //printf("%d\n", arrayOfTokens[1][1]);
     int numberOfTokens;
     // printf("Please enter the string:");
-    // fgets(str, 256, stdin);
+    // fgets(str, 11, stdin);
 
     numberOfTokens = getTokens(str, &arrayOfTokens);
     printf("Number of tokens = %d\n", numberOfTokens+1);
@@ -36,6 +35,7 @@ int main()
         printf("Token %d:", i);
         printf("%s\n", arrayOfTokens[i]);
     }
+
 
     for(int i = 0; i < 10; i++){
         free(arrayOfTokens[i]);

@@ -28,7 +28,7 @@ int getTokens(char *s, char ***args){
         if(!isspace(s[i])){
             printf("In if !isspace with token num = %d\n", token);
             temp = s[i];
-            (*args+token)[i] = &temp;
+            strncpy((*args)[token], (s+i), sizeOfStr);
             printf("Temp: %d\n", temp);
             printf("args: %s\n", (*args+token)[i]);
         }else{
@@ -42,7 +42,7 @@ int getTokens(char *s, char ***args){
     }
     printf("numSpace: %d\n", numSpace);
 
-
+    //Below is what I tried the first time and could not get to work
     // int size = 0;
     // int num = 1; //Minimum number of tokens including NULL
 
