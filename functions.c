@@ -18,43 +18,37 @@
  * @return the number of tokens in the function
  */
 int getTokens(char *s, char ***args){
+    int size = sizeof(s)+2;
     int numSpace = 0;
     int sizeOfStr = 0;
     int token = 0;
     int numString = 1;
     char temp;
-    for(int i = 0; i <= sizeof(s);i++){
-        sizeOfStr++;
-        if(!isspace(s[i])){
+    (*args) = malloc(10 * sizeof(char*));
+    for(int i = 0; i < 10; i++){
+        (*args)[i] = malloc(15 * sizeof(char*));
+    }
+    for(int i = 0; i <= size; i++){
+        
+        if(!isspace(s[i]) && s[i] != '\0'){
+            sizeOfStr++;
             printf("In if !isspace with token num = %d\n", token);
             temp = s[i];
-            strncpy((*args)[token], (s+i), sizeOfStr);
+            
             printf("Temp: %d\n", temp);
-            printf("args: %s\n", (*args+token)[i]);
+            
         }else{
+            strncpy((*args)[token], (s+i-sizeOfStr), sizeOfStr+1);
+            printf("args: %s\n", *(*args+token));
             numSpace++;
             token++;
             numString ++;
             printf("sizeOfStr: %d\n", sizeOfStr);
             printf("numString: %d\n", numString);
-            
+            sizeOfStr = 0;            
         }
     }
     printf("numSpace: %d\n", numSpace);
 
-    //Below is what I tried the first time and could not get to work
-    // int size = 0;
-    // int num = 1; //Minimum number of tokens including NULL
-
-
-    // for (int i = 0; i < 50; i++){
-    //     size++;
-    //     if(isspace(s[i])){ //Use isspace #include <ctype.h>
-    //         strncpy((*args)[num-1], s+i-size, size);
-    //         num++;
-    //         size = 0;
-    //     }
-    // }
-    
     return numString;
 }
