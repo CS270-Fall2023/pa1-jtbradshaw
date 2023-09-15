@@ -1,7 +1,7 @@
 /**
  * @file functions.h
  * @author Justin Bradshaw
- * @brief .h file for PA1
+ * @brief .h file for CS270 PA1
  * @version 0.1
  * @date 2023-09-13
  * 
