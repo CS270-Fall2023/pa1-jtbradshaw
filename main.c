@@ -22,7 +22,6 @@ int main()
 
     numberOfTokens = getTokens(str, &arrayOfTokens);
     printf("Number of tokens = %d\n", numberOfTokens);
-    printf("String is: %s\n", str);
 
 
     for(int i = 0; i<numberOfTokens; i++){
