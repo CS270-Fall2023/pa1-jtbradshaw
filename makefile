@@ -12,7 +12,7 @@ clean:
 	rm -f main.o functions.o main
 
 main: main.o functions.o
-	$(CC) $(FLAGS) main.o functions.o -o main
+	$(CC) $(FLAGS) $< functions.o -o $@
 	
 main.o: functions.h
 
