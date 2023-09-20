@@ -14,9 +14,9 @@ clean:
 main: main.o functions.o
 	$(CC) $(FLAGS) main.o functions.o -o main
 	
-main.o: main.c functions.c functions.h
-	$(CC) $(FLAGS) -c main.c -o main.o
+main.o: functions.h
 
-functions.o: main.c functions.c functions.h
-	$(CC) $(FLAGS) -c functions.c -o functions.o
+
+functions.o: functions.h
+
 
