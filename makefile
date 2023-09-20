@@ -9,7 +9,7 @@ FLAGS = -Wall -g
 all: main
 
 clean:
-	rm -f main.o functions.o
+	rm -f main.o functions.o main
 
 main: main.o functions.o
 	gcc -Wall main.o functions.o -o main
