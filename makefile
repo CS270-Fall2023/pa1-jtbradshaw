@@ -12,11 +12,11 @@ clean:
 	rm -f main.o functions.o main
 
 main: main.o functions.o
-	gcc -Wall main.o functions.o -o main
+	$(CC) $(FLAGS) main.o functions.o -o main
 	
 main.o: main.c functions.c functions.h
-	gcc -c main.c -o main.o
+	$(CC) $(FLAGS) -c main.c -o main.o
 
 functions.o: main.c functions.c functions.h
-	gcc -c functions.c -o functions.o
+	$(CC) $(FLAGS) -c functions.c -o functions.o
 
